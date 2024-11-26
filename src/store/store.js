@@ -60,7 +60,7 @@ export default createStore({
         })
         commit('SET_NEWS', {
           articles: filteredArticles,
-          totalResults: response.data.totalResults,
+          totalResults: filteredArticles?.length,
         })
       } catch (error) {
         commit('SET_ERROR', error.response?.data?.message || error.message)
